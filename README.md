@@ -8,14 +8,15 @@
 
  1. Describe the purpose of Big 0.
 
-    > Big O is a mathematical notation describing the efficiency of a function at a particular value.
+    > Big O is a mathematical notation describing the efficiency of a function at a particular value of inputs.
 
 ---
 
 
  2. What 2 things does it measure?
 
-    > time and space.
+    > input: elements (n)
+      output: number of operations
 
 ---
 
@@ -60,19 +61,18 @@
 
     O(n^2)
 
-    > O(n) is the best time complexity that sorting algorithms can have. In this list O(log n) is faster, however it is generally used for searching rather than sorting.
+    > O(n) is the best time complexity for sorting algorithms. Of the above O(log n) is faster than O(n), however it is generally optimized for searching rather than sorting.
 
 ---
 
 
  6. Describe what sets these these 3 complexities apart from each other: O(1), O(n) and O(n^2)
 
-    > O(1) - Constant - takes the same amount of time regardless of input size because only one operation is performed.
+    > O(1) - Constant - takes a constant amount of time regardless of input size because only one operation is performed.
     O(n) - linear - running time increases proportionally to the size of input.
     O(n^2) - quadratic - running time increases as the square of the size of input.
 
 ---
-
 
 7. How would you recognize O(log n) and O(n log n) time complexities in a function?
 
@@ -95,22 +95,22 @@
 
     2. O(n)
 
-  const findIndex = (items, match) => {
-    for (let i=0, total=items.length; i < total; i++) {
-      if (items[i] == match)
-         return i;
-         }
-   return -1;
+    const findIndex = (items, match) => {
+      for (let i=0, total=items.length; i < total; i++) {
+        if (items[i] == match)
+           return i;
+           }
+      return -1;
     };
 
     3. O(n^2)
 
     const buildSquareMatrix = (items) => {
-   let matrix= [];
-   for (let i=0, total=items.length; i < total; i++){
-      matrix[i] = [];
-      for (let j=0, total=items.length; j < total; j++)
-         matrix[i].push(items[j]);
+      let matrix= [];
+      for (let i=0, total=items.length; i < total; i++){
+        matrix[i] = [];
+          for (let j=0, total=items.length; j < total; j++)
+            matrix[i].push(items[j]);
    }
    return matrix;
 };
